@@ -19,6 +19,7 @@ require (
 	github.com/go-playground/validator/v10 v10.11.2 // indirect
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/goccy/go-json v0.10.0 // indirect
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
