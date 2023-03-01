@@ -21,3 +21,5 @@ Before running the project, you must create the .env variables file where you wi
 | **DB_USER**     | *admin*           |
 | **DB_PASSWORD** | *my_awesome_pswd* |
 | **DB_NAME**     | *petshop*         |
+| **BCRYPT_COST** | *10*              |
+| **JWT_KEY**     | claims_key        |
