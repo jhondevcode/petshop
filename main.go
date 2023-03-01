@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 
@@ -21,5 +22,5 @@ func main() {
 
 	routes.AuthRouter(engine, db)
 
-	log.Panic(engine.Run(":8080"))
+	log.Panic(engine.Run(fmt.Sprintf(":%d", config.ServerPort())))
 }
