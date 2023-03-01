@@ -19,7 +19,7 @@ Before running the project, you must create the .env variables file where you wi
 | **DB_USER**     | _admin_           | _required_ |
 | **DB_PASSWORD** | _my_awesome_pswd_ | _required_ |
 | **DB_NAME**     | _petshop_         | _required_ |
-| **BCRYPT_COST** | _10_              | _required_ |
+| **BCRYPT_COST** | _10_              | _optional_ |
 | **JWT_KEY**     | claims_key        | _required_ |
 | **SERVER_PORT** | 8080              | _optional_ |
 
