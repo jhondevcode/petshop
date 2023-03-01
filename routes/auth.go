@@ -52,17 +52,17 @@ func signupHandler(c *gin.Context, db *gorm.DB) {
 func loginHandler(c *gin.Context, db *gorm.DB) {
 	var loginForm dto.LoginDTO
 	if err := c.ShouldBindJSON(&loginForm); err != nil {
-		c.JSON(400, gin.H{"error": "invalid request"})
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid request"})
 		return
 	}
 
 	if ok, user := verifyUser(loginForm.Email, loginForm.Password, db); !ok {
-		c.JSON(401, gin.H{"error": "unauthorized"})
+		c.JSON(http.StatusUnauthorized, gin.H{"error": "unauthorized"})
 	} else {
 		if token, err := createJWT(user); err != nil {
-			c.JSON(500, gin.H{"error": "server error"})
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "server error"})
 		} else {
-			c.JSON(200, gin.H{"token": token})
+			c.JSON(http.StatusOK, gin.H{"token": token})
 		}
 	}
 }
