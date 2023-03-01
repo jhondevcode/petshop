@@ -21,3 +21,15 @@ Before running the project, you must create the .env variables file where you wi
 | **DB_NAME**     | _petshop_         |
 | **BCRYPT_COST** | _10_              |
 | **JWT_KEY**     | claims_key        |
+
+## 3. Execution
+
+```bash
+go run main.go
+```
+
+## 4. Build
+
+```bash
+go build main.go
+```
