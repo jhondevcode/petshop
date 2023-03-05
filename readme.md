@@ -32,5 +32,5 @@ go run main.go
 ## 4. Build
 
 ```bash
-go build main.go
+go build -o petshop
 ```
