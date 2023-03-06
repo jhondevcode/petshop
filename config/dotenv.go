@@ -6,13 +6,9 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func LoadEnv(kill bool) {
+func LoadEnv() {
 	err := godotenv.Load(".env")
 	if err != nil {
-		if kill {
-			log.Panic(err)
-		} else {
-			log.Println(err)
-		}
+		log.Println("Cannot found dotenv file :(")
 	}
 }
