@@ -1,2 +1,19 @@
+# Goland files
+.idea
+
+# Environment files
 .env
-bin
+.env.prod
+.env.test
+.env.dev
+
+# Docker compose environment files
+docker-compose.prod.yaml
+docker-compose.test.yaml
+docker-compose.dev.yaml
+
+# MySQL volumen data
+data
+
+# Internal file generated
+users.json
