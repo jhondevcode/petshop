@@ -5,7 +5,7 @@ A REST api writted in golang using gin and gorm
 ## 1. Installation
 
 ```bash
-go mod tidy
+go mod download
 ```
 
 ## 2. Settings
@@ -34,3 +34,24 @@ go run main.go
 ```bash
 go build -o petshop
 ```
+
+## Running using docker compose
+
+If you have runtimes for the application, you can use the following options in conjunction with docker compose:
+
+- For production:
+```bash
+docker-compose --env-file .env.prod -f docker-compose.prod.yaml up
+```
+
+- For development:
+```bash
+docker-compose --env-file .env.dev -f docker-compose.dev.yaml up
+```
+
+- For testing:
+```bash
+docker-compose --env-file .env.test -f docker-compose.test.yaml up
+```
+
+Remember: to be able to execute the previous commands you must have an .env file and a docker-compose.yaml with respect to the environment where you are going to execute it.
