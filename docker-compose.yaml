@@ -1,0 +1,34 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:debian
+    container_name: mysql
+    restart: always
+    ports:
+      - "${DB_PORT}:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: you_mysql_root_password
+      MYSQL_USER: $DB_USER
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_DATABASE: $DB_NAME
+
+  petshop:
+    image: petshop-gin
+    container_name: petshop
+    build: .
+    restart: always
+    ports:
+      - 8000:8080
+    environment:
+      DB_HOST: mysql
+      DB_PORT: $DB_PORT
+      DB_USER: $DB_USER
+      DB_PASSWORD: $DB_PASSWORD
+      DB_NAME: $DB_NAME
+      BCRYPT_COST: $BCRYPT_COST
+      JWT_KEY: $JWT_KEY
+      SERVER_PORT: $SERVER_PORT
+    depends_on:
+      - mysql
