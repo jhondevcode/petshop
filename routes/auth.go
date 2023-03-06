@@ -7,11 +7,12 @@ import (
 	"strconv"
 	"time"
 
+	"petshop/dto"
+	"petshop/models"
+
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
 	"github.com/google/uuid"
-	"github.com/jhondevcode/petshop/dto"
-	"github.com/jhondevcode/petshop/models"
 	"golang.org/x/crypto/bcrypt"
 	"gorm.io/gorm"
 )

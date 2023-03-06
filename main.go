@@ -5,13 +5,14 @@ import (
 	"log"
 	"net/http"
 
+	"petshop/config"
+	"petshop/routes"
+
 	"github.com/gin-gonic/gin"
-	"github.com/jhondevcode/petshop/config"
-	"github.com/jhondevcode/petshop/routes"
 )
 
 func main() {
-	config.LoadEnv(true)
+	config.LoadEnv()
 	db := config.ConnectDB()
 	engine := gin.Default()
 	engine.Use(config.ConfigCors())
