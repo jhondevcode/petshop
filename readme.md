@@ -40,16 +40,19 @@ go build -o petshop
 If you have runtimes for the application, you can use the following options in conjunction with docker compose:
 
 - For production:
+
 ```bash
 docker-compose --env-file .env.prod -f docker-compose.prod.yaml up
 ```
 
 - For development:
+
 ```bash
 docker-compose --env-file .env.dev -f docker-compose.dev.yaml up
 ```
 
 - For testing:
+
 ```bash
 docker-compose --env-file .env.test -f docker-compose.test.yaml up
 ```
